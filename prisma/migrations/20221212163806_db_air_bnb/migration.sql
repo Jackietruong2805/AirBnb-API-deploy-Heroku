@@ -73,6 +73,7 @@ CREATE TABLE `NguoiDung` (
     `birth_day` VARCHAR(20) NULL,
     `gender` VARCHAR(10) NULL,
     `role` VARCHAR(50) NULL,
+    `image` LONGTEXT NULL,
 
     PRIMARY KEY (`id_nguoidung`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -96,7 +97,7 @@ CREATE TABLE `Phong` (
     `do_xe` BOOLEAN NULL,
     `ho_boi` BOOLEAN NULL,
     `ban_ui` BOOLEAN NULL,
-    `hinh_anh` VARCHAR(500) NULL,
+    `hinh_anh` LONGTEXT NULL,
     `id_vitri` INTEGER NULL,
 
     INDEX `id_vitri`(`id_vitri`),
@@ -109,7 +110,7 @@ CREATE TABLE `ViTri` (
     `ten_vi_tri` VARCHAR(255) NULL,
     `tinh_thanh` VARCHAR(255) NULL,
     `quoc_gia` VARCHAR(255) NULL,
-    `hinh_anh` VARCHAR(500) NULL,
+    `hinh_anh` LONGTEXT NULL,
 
     PRIMARY KEY (`id_vitri`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

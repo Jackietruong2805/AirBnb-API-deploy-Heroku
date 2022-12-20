@@ -44,6 +44,7 @@ model NguoiDung {
   birth_day    String?    @db.VarChar(20)
   gender       String?    @db.VarChar(10)
   role         String?    @db.VarChar(50)
+  image        String?    @db.LongText
   BinhLuan     BinhLuan[]
   DatPhong     DatPhong[]
 }
@@ -66,7 +67,7 @@ model Phong {
   do_xe     Boolean?
   ho_boi    Boolean?
   ban_ui    Boolean?
-  hinh_anh  String?    @db.VarChar(500)
+  hinh_anh  String?    @db.LongText
   id_vitri  Int?
   BinhLuan  BinhLuan[]
   DatPhong  DatPhong[]

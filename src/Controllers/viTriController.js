@@ -82,14 +82,21 @@ const deleteVitri = async (req, res) => {
     }
 }
 
-const uploadVitriImg = (req, res) =>{
+const uploadVitriImg = async (req, res) =>{
     try{
-        const fs = require("fs");
-        fs.readFile(process.cwd() + "/" + req.file.path, (err, data) => {
-            let fileName = `"data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}"`;
-            fs.unlinkSync(process.cwd() + "/" + req.file.path);
-            res.send(fileName);
-          })
+        const {id_vitri} = req.query;
+        const isVitriExist = await prisma.ViTri.findFirst({where: {id_vitri: +id_vitri}});
+        if(isVitriExist){
+            const fs = require("fs");
+            fs.readFile(process.cwd() + "/" + req.file.path, async (err, data) => {
+                let fileName = `"data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}"`;
+                fs.unlinkSync(process.cwd() + "/" + req.file.path);
+                await prisma.ViTri.update({data: {hinh_anh: fileName}, where: {id_vitri: +id_vitri}});
+                res.send(fileName);
+              })
+        }else{
+            failCode(res, isVitriExist, "không tồn tại vị trí có id: " + id_vitri);
+        }
     }catch(err){
         errorCode(res, err, "Lỗi backend");
     }

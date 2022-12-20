@@ -115,12 +115,19 @@ const searchUserName = async (req, res) =>{
 
 const uploadUserAvatar = async(req, res) =>{
     try{
-        const fs = require("fs");
-        fs.readFile(process.cwd() + "/" + req.file.path, (err, data) => {
-            let fileName = `"data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}"`;
-            fs.unlinkSync(process.cwd() + "/" + req.file.path);
-            res.send(fileName);
-          })
+        const {id_nguoidung} = req.query;
+        const isUserExist = await prisma.NguoiDung.findFirst({where: {id_nguoidung: +id_nguoidung}});
+        if(isUserExist){
+            const fs = require("fs");
+            fs.readFile(process.cwd() + "/" + req.file.path, async (err, data) => {
+                let fileName = `"data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}"`;
+                fs.unlinkSync(process.cwd() + "/" + req.file.path);
+                await prisma.NguoiDung.update({data: {image: fileName}, where: {id_nguoidung: +id_nguoidung}})
+                res.send(fileName);
+              })
+        }else{
+            failCode(res, isUserExist, "Không tồn tại người dùng có id: " + id_nguoidung);
+        }
     }catch(err){
         errorCode(res, err, "Lỗi backend");
     }

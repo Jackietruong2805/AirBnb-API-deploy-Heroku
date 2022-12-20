@@ -97,14 +97,21 @@ const deletePhong = async (req, res) =>{
     }
 }
 
-const uploadPhongImg = (req, res) =>{
+const uploadPhongImg = async (req, res) =>{
     try{
-        const fs = require("fs");
-        fs.readFile(process.cwd() + "/" + req.file.path, (err, data) => {
-            let fileName = `"data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}"`;
-            fs.unlinkSync(process.cwd() + "/" + req.file.path);
-            res.send(fileName);
-          })
+        const {id_phong} = req.query;
+        const isPhongExist = await prisma.Phong.findFirst({where: {id_phong: +id_phong}});
+        if(isPhongExist){
+            const fs = require("fs");
+            fs.readFile(process.cwd() + "/" + req.file.path, async (err, data) => {
+                let fileName = `"data:${req.file.mimetype};base64,${Buffer.from(data).toString("base64")}"`;
+                fs.unlinkSync(process.cwd() + "/" + req.file.path);
+                await prisma.Phong.update({data: {hinh_anh: fileName}, where: {id_phong: +id_phong}});
+                res.send(fileName);
+            })
+        }else{
+            failCode(res, isPhongExist, 'Không tồn tại phòng có id: ' + id_phong)
+        }
     }catch(err){
         errorCode(res, err, "Lỗi backend");
     }
