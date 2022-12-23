@@ -1,0 +1,1105 @@
+{
+	"info": {
+		"_postman_id": "843504b6-978f-424b-85f7-98014e6df5e8",
+		"name": "AirBnb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21854887"
+	},
+	"item": [
+		{
+			"name": "Phong",
+			"item": [
+				{
+					"name": "getPhong",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/phong-thue",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPhongByVitri",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/phong-thue/lay-phong-theo-vi-tri?locationId=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue",
+								"lay-phong-theo-vi-tri"
+							],
+							"query": [
+								{
+									"key": "locationId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPhongById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/phong-thue/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPhong",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzU2OTksImV4cCI6MTY3MTUzNjg5OX0.-eT3Ypoqmmfof1Xb-FQKXTPEvXU_cxEYXm8PY-eahNo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_phong\": \"Hidden Haven\",\r\n    \"khach\": 10,\r\n    \"phong_ngu\": 5,\r\n    \"giuong\": 5,\r\n    \"phong_tam\": 3,\r\n    \"mo_ta\": \"Thư giãn cùng cả gia đình tại Biệt thự 5 phòng ngủ yên bình này nhìn ra Bãi biển Vịnh Hout\",\r\n    \"gia_tien\": 10000000,\r\n    \"may_giat\": true,\r\n    \"ban_la\": true,\r\n    \"tivi\": true,\r\n    \"bep\": true,\r\n    \"do_xe\": true,\r\n    \"ho_boi\": true,\r\n    \"ban_ui\": true,\r\n    \"hinh_anh\": \"https://a0.muscache.com/im/pictures/miso/Hosting-717134404264905813/original/dfe9fd1e-a010-43c9-b546-0bbc7d59f7f3.jpeg?im_w=1200\",\r\n    \"id_vitri\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/phong-thue",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadPhong",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzU2OTksImV4cCI6MTY3MTUzNjg5OX0.-eT3Ypoqmmfof1Xb-FQKXTPEvXU_cxEYXm8PY-eahNo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imgPhong",
+									"type": "file",
+									"src": "/C:/Users/ASUS/Pictures/phong.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/phong-thue/upload-hinh-phong?id_phong=6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue",
+								"upload-hinh-phong"
+							],
+							"query": [
+								{
+									"key": "id_phong",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePhong",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzU2OTksImV4cCI6MTY3MTUzNjg5OX0.-eT3Ypoqmmfof1Xb-FQKXTPEvXU_cxEYXm8PY-eahNo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_phong\": \"Hidden Haven\",\r\n    \"khach\": 10,\r\n    \"phong_ngu\": 5,\r\n    \"giuong\": 5,\r\n    \"phong_tam\": 3,\r\n    \"mo_ta\": \"Thư giãn cùng cả gia đình tại Biệt thự 5 phòng ngủ yên bình này nhìn ra Bãi biển Vịnh Hout\",\r\n    \"gia_tien\": 10000000,\r\n    \"may_giat\": true,\r\n    \"ban_la\": true,\r\n    \"tivi\": true,\r\n    \"bep\": true,\r\n    \"do_xe\": true,\r\n    \"ho_boi\": true,\r\n    \"ban_ui\": true,\r\n    \"hinh_anh\": \"https://a0.muscache.com/im/pictures/miso/Hosting-717134404264905813/original/dfe9fd1e-a010-43c9-b546-0bbc7d59f7f3.jpeg?im_w=1200\",\r\n    \"id_vitri\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/phong-thue/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePhong",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzcwMjIsImV4cCI6MTY3MTUzODIyMn0.ZWIsWyDlEcpGeOzd8bmW1nsWQ-MCYcxFLXCXofQ6iz0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/api/phong-thue/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue",
+								"8"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paginationPhong",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/phong-thue/phan-trang-tim-kiem?pageIndex=1&pageSize=3&keyword=t",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"phong-thue",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "keyword",
+									"value": "t"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ViTri",
+			"item": [
+				{
+					"name": "getVitri",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/vi-tri",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vi-tri"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVitriById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/vi-tri/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vi-tri",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteVitri",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzYwMDcsImV4cCI6MTY3MTUzNzIwN30.OFn5MTdwHSZdtxWKTLopKalxPUfjfFyS8e3mRTF-wvY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/api/vi-tri/15",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vi-tri",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createVitri",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzYwMDcsImV4cCI6MTY3MTUzNzIwN30.OFn5MTdwHSZdtxWKTLopKalxPUfjfFyS8e3mRTF-wvY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_vi_tri\": \"Broad Cove\",\r\n    \"tinh_thanh\": \"Nova Scotia\",\r\n    \"quoc_gia\": \"Canada\",\r\n    \"hinh_anh\":    \"https://a0.muscache.com/im/pictures/miso/Hosting-713898202877836679/original/5bd69eb7-e4ae-4615-97b7-440f1658683c.jpeg?im_w=1200\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/vi-tri",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vi-tri"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadImgVitri",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzYwMDcsImV4cCI6MTY3MTUzNzIwN30.OFn5MTdwHSZdtxWKTLopKalxPUfjfFyS8e3mRTF-wvY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imgVitri",
+									"type": "file",
+									"src": "/C:/Users/ASUS/Pictures/vitri.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/vi-tri/upload-hinh-vitri?id_vitri=1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vi-tri",
+								"upload-hinh-vitri"
+							],
+							"query": [
+								{
+									"key": "id_vitri",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVitri",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzYwMDcsImV4cCI6MTY3MTUzNzIwN30.OFn5MTdwHSZdtxWKTLopKalxPUfjfFyS8e3mRTF-wvY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ten_vi_tri\": \"Broad Cove\",\r\n    \"tinh_thanh\": \"Nova Scotia\",\r\n    \"quoc_gia\": \"Canada\",\r\n    \"hinh_anh\":    \"https://a0.muscache.com/im/pictures/miso/Hosting-713898202877836679/original/5bd69eb7-e4ae-4615-97b7-440f1658683c.jpeg?im_w=1200\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/vi-tri/13",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vi-tri",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paginationVitri",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/vi-tri/phan-trang-tim-kiem?pageSize=3&pageIndex=1&keyword=a",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"vi-tri",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "keyword",
+									"value": "a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NguoiDung",
+			"item": [
+				{
+					"name": "getUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/api/users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchUserName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/users/search/Đặng Yến",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"search",
+								"Đặng Yến"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/users/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/users?id=17",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Phạm Anh Vũ\",\r\n    \"email\": \"anhvu2@gmail.com\",\r\n    \"pass_word\": \"12345\",\r\n    \"phone\": \"0889911237\",\r\n    \"birth_day\": \"30/01/2002\",\r\n    \"gender\": \"Nam\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadUserAvatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzYwMDcsImV4cCI6MTY3MTUzNzIwN30.OFn5MTdwHSZdtxWKTLopKalxPUfjfFyS8e3mRTF-wvY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/ASUS/Pictures/Tony-Stark-Iron_Man-Avengers_2052813.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/users/upload-avatar?id_nguoidung=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"upload-avatar"
+							],
+							"query": [
+								{
+									"key": "id_nguoidung",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Phạm Anh Vũ\",\r\n    \"email\": \"anhvu3@gmail.com\",\r\n    \"pass_word\": \"12345\",\r\n    \"phone\": \"0889911239\",\r\n    \"birth_day\": \"30/01/2002\",\r\n    \"gender\": \"Nam\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/users/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paginationUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/users/phan-trang-tim-kiem?pageIndex=1&pageSize=3&keyword=Thuề",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"phan-trang-tim-kiem"
+							],
+							"query": [
+								{
+									"key": "pageIndex",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "keyword",
+									"value": "Thuề"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DatPhong",
+			"item": [
+				{
+					"name": "getDatPhong",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/dat-phong",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"dat-phong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDatPhongByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/dat-phong/lay-theo-nguoi-dung/2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"dat-phong",
+								"lay-theo-nguoi-dung",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDatPhongById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/dat-phong/1/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"dat-phong",
+								"1",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createDatPhong",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_nguoidung\": 6,\r\n    \"id_phong\": 2,\r\n    \"ngay_den\": \"2022-11-23\",\r\n    \"ngay_di\": \"2021-12-12\",\r\n    \"so_luong_khach\": 2,\r\n    \"ma_nguoi_dat\": 1123\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/dat-phong",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"dat-phong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDatPhong",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_nguoidung\": 6,\r\n    \"id_phong\": 2,\r\n    \"ngay_den\": \"2022-11-23\",\r\n    \"ngay_di\": \"2021-12-12\",\r\n    \"so_luong_khach\": 2,\r\n    \"ma_nguoi_dat\": 1124\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/dat-phong/5",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"dat-phong",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDatPhong",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/dat-phong/10/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"dat-phong",
+								"10",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BinhLuan",
+			"item": [
+				{
+					"name": "getBinhLuan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/binh-luan",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"binh-luan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBinhLuanByPhongId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/binh-luan/lay-binh-luan-theo-phong/3",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"binh-luan",
+								"lay-binh-luan-theo-phong",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBinhLuan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzcwMjIsImV4cCI6MTY3MTUzODIyMn0.ZWIsWyDlEcpGeOzd8bmW1nsWQ-MCYcxFLXCXofQ6iz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_nguoidung\": 6,\r\n    \"id_phong\": 7,\r\n    \"ngay_binh_luan\": \"2022-11-29 23:26:49\",\r\n    \"noi_dung\": \"sạch sẽ đẹp đẽ\",\r\n    \"sao_binh_luan\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/binh-luan",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"binh-luan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBinhLuan",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzcwMjIsImV4cCI6MTY3MTUzODIyMn0.ZWIsWyDlEcpGeOzd8bmW1nsWQ-MCYcxFLXCXofQ6iz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_phong\": 6,\r\n    \"ngay_binh_luan\": \"2022-11-29 23:23:45\",\r\n    \"noi_dung\": \"sạch sẽ, gọn gàng, nhanh nhẹn\",\r\n    \"sao_binh_luan\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/binh-luan/1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"binh-luan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBinhLuan",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiaGFvdHJ1b25nMjgwNUBnbWFpbC5jb20iLCJwYXNzX3dvcmQiOiIxMjM0NSJ9LCJpYXQiOjE2NzE1MzcwMjIsImV4cCI6MTY3MTUzODIyMn0.ZWIsWyDlEcpGeOzd8bmW1nsWQ-MCYcxFLXCXofQ6iz0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ngay_binh_luan\": \"2018-12-11 14:23:43\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/binh-luan/8/8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"binh-luan",
+								"8",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Trương Gia Hào\",\r\n    \"email\": \"haotruong2805@gmail.com\",\r\n    \"pass_word\": \"12345\",\r\n    \"phone\": \"0913148932\",\r\n    \"birth_day\": \"28/05/2002\",\r\n    \"gender\": \"male\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/auth/signup",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"haotruong2805@gmail.com\",\r\n    \"pass_word\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/auth/signin",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "http://localhost:3333",
+			"type": "string"
+		}
+	]
+}
